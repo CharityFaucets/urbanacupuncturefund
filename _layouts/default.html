@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="{{ "/assets/images/favicon.ico" | relative_url }}">
+  
+  {% seo %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title"><a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
+      
+      <nav class="site-nav">
+        <a href="{{ "/lab" | relative_url }}" class="nav-link">The Lab</a>
+        <a href="{{ "/library" | relative_url }}" class="nav-link">The Library</a>
+        <a href="{{ "/workshop" | relative_url }}" class="nav-link">The Workshop</a>
+        <a href="{{ "/exchange" | relative_url }}" class="nav-link">The Exchange</a>
+        <a href="{{ "/forum" | relative_url }}" class="nav-link">The Forum</a>
+        <a href="{{ "/about" | relative_url }}" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Urban Acupuncture Fund</h3>
+          <p>Exploring solutions to housing challenges through the lens of urban acupuncture, AI integration, and innovative financing.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="{{ "/lab" | relative_url }}">The Lab</a></li>
+            <li><a href="{{ "/library" | relative_url }}">The Library</a></li>
+            <li><a href="{{ "/workshop" | relative_url }}">The Workshop</a></li>
+            <li><a href="{{ "/exchange" | relative_url }}">The Exchange</a></li>
+            <li><a href="{{ "/forum" | relative_url }}">The Forum</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="{{ "/about" | relative_url }}">About</a></li>
+            <li><a href="{{ "/contact" | relative_url }}">Contact</a></li>
+            <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
+            <li><a href="https://linkedin.com/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+</body>
+</html>
