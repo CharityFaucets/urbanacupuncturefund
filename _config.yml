@@ -1,0 +1,76 @@
+# Site settings
+title: Urban Acupuncture Fund
+email: your-email@example.com
+description: >-
+  A resource for exploring solutions to housing challenges through the lens 
+  of urban acupuncture, AI integration, and innovative financing.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://urbanacupuncturefund.github.io" # the base hostname & protocol
+github_username: yourusername
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections for different sections
+collections:
+  lab:
+    output: true
+    permalink: /lab/:path/
+  library:
+    output: true
+    permalink: /library/:path/
+  workshop:
+    output: true
+    permalink: /workshop/:path/
+  exchange:
+    output: true
+    permalink: /exchange/:path/
+  forum:
+    output: true
+    permalink: /forum/:path/
+
+# Default front matter for collections
+defaults:
+  - scope:
+      path: ""
+      type: "lab"
+    values:
+      layout: "post"
+      category: "lab"
+  - scope:
+      path: ""
+      type: "library"
+    values:
+      layout: "post"
+      category: "library"
+  - scope:
+      path: ""
+      type: "workshop"
+    values:
+      layout: "post"
+      category: "workshop"
+  - scope:
+      path: ""
+      type: "exchange"
+    values:
+      layout: "post"
+      category: "exchange"
+  - scope:
+      path: ""
+      type: "forum"
+    values:
+      layout: "post"
+      category: "forum"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
